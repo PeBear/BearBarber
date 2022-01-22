@@ -2,27 +2,29 @@ import React from "react";
 import { ListRenderItemInfo, StyleSheet } from "react-native";
 import { List, ListItem, ListItemElement, Toggle } from "@ui-kitten/components";
 import { ListItemModel } from "../model/list-item.model";
-import {ThemeContext} from '../app/theme-context';
+import { AppContext } from "../app/app-context";
 
 const data: any[] = [];
 
-data.push({
-  title: "Dark mode",
-  description: null,
-});
+data.push(
+  {
+    tit'Dark mode'ode",
+    description: null,
+  },
+  {
+    tit'Loading'ing",
+  }
+);
 
 export default function SettingsScreen() {
-
-  const themeContext = React.useContext(ThemeContext);
-  const [activeChecked, setActiveChecked] = React.useState(themeContext.isDarkTheme);
+  const appContext = React.useContext(AppContext);
 
   const onActiveCheckedChange = (isChecked: boolean) => {
-    setActiveChecked(isChecked);
-    themeContext.toggleDark();
+    appContext.toggleDark();
   };
 
   const renderItemAccessory = () => (
-    <Toggle checked={activeChecked} onChange={onActiveCheckedChange} />
+    <Toggle checked={appContext.isDarkTheme} onChange={onActiveCheckedChange}/>
   );
 
   const renderItem = (

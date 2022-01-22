@@ -1,38 +1,41 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import SettingsScreen from "../screens/SettingsScreen";
-import { FontAwesome } from "@expo/vector-icons";
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from "@react-navigation/native";
+import BottomNavigator from "./BottomNavigator";
 import React from "react";
-import HomeNavigator from "./HomeNavigator";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const BottomTab = createBottomTabNavigator();
+const navigatorTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "#FFF",
+  },
+};
 
-export default function RootNavigator() {
+const navigatorDarkTheme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    background: "#222B45",
+  },
+};
+const Stack = createNativeStackNavigator();
+
+export default function RootNavigator(props: any) {
   return (
-    <BottomTab.Navigator>
-      <BottomTab.Screen
-        name="HomeNavigator"
-        component={HomeNavigator}
-        options={{
-          title: "Home",
-          headerShown: false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-        }}
-      />
-      <BottomTab.Screen
-        name="SettingsScreen"
-        component={SettingsScreen}
-        options={{
-          title: "Settings",
-          tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />,
-        }}
-      />
-    </BottomTab.Navigator>
+    <NavigationContainer
+      theme={props.isDarkTheme ? navigatorDarkTheme : navigatorTheme}
+    >
+      <Stack.Navigator>
+        <Stack.Screen
+          name="RootNavigator"
+          component={BottomNavigator}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"];
-  color: string;
-}) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }

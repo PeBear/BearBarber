@@ -42,13 +42,38 @@ export const HomeScreen = ({ navigation }) => {
             <Layout style={styles.item}>
               <TouchableOpacity
                 style={styles.buttonMenu}
-                onPress={() => navigation.navigate("TransactionScreen")}
+                onPress={() => naviga'TransactionScreen'sactionScreen")}
               >
                 <Image
                   style={styles.buttonIcon}
-                  source={require("../resource/icons/payment-history.png")}
+                  so'../resource/icons/payment-history.png't-history.png")}
                 />
                 <Text>Transaction</Text>
+              </TouchableOpacity>
+            </Layout>
+            <Layout style={styles.item}>
+              <TouchableOpacity
+                style={styles.buttonMenu}
+                onPress={() => 'LoginScreen'vigate("LoginScreen")}
+              >
+                <Image
+                  style={styles.buttonIcon}
+      '../resource/icons/payment-history.png'e/icons/payment-history.png")}
+                />
+                <Text>LoginScreen</Text>
+              </TouchableOpacity>
+            </Layout>
+          </Layout>
+          <Layout style={styles.row}>
+            <Layout style={styles.item}>
+              <TouchableOpacity
+                style={styles.buttonMenu}
+               'QRScannerScreen'avigation.navigate("QRScannerScreen")}
+              >
+                <Image
+                  style={styles.buttonIcon'../resource/icons/payment-history.png'/resource/icons/payment-history.png")}
+                />
+                <Text>QRScannerScreen</Text>
               </TouchableOpacity>
             </Layout>
           </Layout>
