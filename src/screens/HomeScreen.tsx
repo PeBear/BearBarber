@@ -42,11 +42,11 @@ export const HomeScreen = ({ navigation }) => {
             <Layout style={styles.item}>
               <TouchableOpacity
                 style={styles.buttonMenu}
-                onPress={() => naviga'TransactionScreen'sactionScreen")}
+                onPress={() => navigation.navigate("TransactionScreen")}
               >
                 <Image
                   style={styles.buttonIcon}
-                  so'../resource/icons/payment-history.png't-history.png")}
+                  source={require("../resource/icons/payment-history.png")}
                 />
                 <Text>Transaction</Text>
               </TouchableOpacity>
@@ -54,11 +54,11 @@ export const HomeScreen = ({ navigation }) => {
             <Layout style={styles.item}>
               <TouchableOpacity
                 style={styles.buttonMenu}
-                onPress={() => 'LoginScreen'vigate("LoginScreen")}
+                onPress={() => navigation.navigate("LoginScreen")}
               >
                 <Image
                   style={styles.buttonIcon}
-      '../resource/icons/payment-history.png'e/icons/payment-history.png")}
+                  source={require("../resource/icons/payment-history.png")}
                 />
                 <Text>LoginScreen</Text>
               </TouchableOpacity>
@@ -68,10 +68,11 @@ export const HomeScreen = ({ navigation }) => {
             <Layout style={styles.item}>
               <TouchableOpacity
                 style={styles.buttonMenu}
-               'QRScannerScreen'avigation.navigate("QRScannerScreen")}
+                onPress={() => navigation.navigate("QRScannerScreen")}
               >
                 <Image
-                  style={styles.buttonIcon'../resource/icons/payment-history.png'/resource/icons/payment-history.png")}
+                  style={styles.buttonIcon}
+                  source={require("../resource/icons/payment-history.png")}
                 />
                 <Text>QRScannerScreen</Text>
               </TouchableOpacity>
@@ -82,6 +83,7 @@ export const HomeScreen = ({ navigation }) => {
     </Layout>
   );
 };
+
 const themedStyles = StyleService.create({
   container: {
     flex: 1,

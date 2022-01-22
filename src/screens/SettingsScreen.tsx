@@ -6,15 +6,10 @@ import { AppContext } from "../app/app-context";
 
 const data: any[] = [];
 
-data.push(
-  {
-    tit'Dark mode'ode",
-    description: null,
-  },
-  {
-    tit'Loading'ing",
-  }
-);
+data.push({
+  title: "Dark mode",
+  description: null,
+});
 
 export default function SettingsScreen() {
   const appContext = React.useContext(AppContext);
@@ -24,7 +19,7 @@ export default function SettingsScreen() {
   };
 
   const renderItemAccessory = () => (
-    <Toggle checked={appContext.isDarkTheme} onChange={onActiveCheckedChange}/>
+    <Toggle checked={appContext.isDarkTheme} onChange={onActiveCheckedChange} />
   );
 
   const renderItem = (

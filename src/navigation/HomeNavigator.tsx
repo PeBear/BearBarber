@@ -24,27 +24,27 @@ export default function HomeNavigator() {
         name="StatisticScreen"
         component={StatisticScreen}
         options={{
-         'Statistic'atistic",
+          title: "Statistic",
         }}
       />
       <Stack.Screen
         name="TransactionScreen"
         component={TransactionScreen}
         options={{
-         'Transaction'saction",
+          title: "Transaction",
         }}
       />
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
         options={{
-         'Login' "Login",
+          title: "Login",
         }}
       />
 
       <Stack.Group
         screenOptions={({ navigation }) => ({
-          pres'modal'n: "modal",
+          presentation: "modal",
           headerLeft: () => <Text onPress={navigation.goBack}>Cancel</Text>,
         })}
       >
@@ -52,14 +52,14 @@ export default function HomeNavigator() {
           name="AddPaymentModal"
           component={AddPaymentModal}
           options={{
-         'Add Payment'd Payment",
+            title: "Add Payment",
           }}
         />
         <Stack.Screen
           name="QRScannerScreen"
           component={QRScannerScreen}
           options={{
-         'QRScannerScreen'nerScreen",
+            title: "QRScannerScreen",
           }}
         />
       </Stack.Group>
