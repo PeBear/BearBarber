@@ -10,6 +10,7 @@ import { AppContext, initContext } from "./src/app/app-context";
 import RootNavigator from "./src/navigation/RootNavigator";
 import Toast from "react-native-toast-message";
 import AppLoading from "expo-app-loading";
+import appConst from "./src/common/constant/AppConst";
 
 if (__DEV__) {
   // @ts-ignore
@@ -61,8 +62,15 @@ export default function App() {
     // });
     // return Promise.all(cacheImages);
   };
+
   useEffect(() => {
     checkPlatformReady();
+
+    async function initApp() {
+      await appConst.init();
+    }
+
+    initApp();
   }, []);
 
   if (!isAppLoaded) {
